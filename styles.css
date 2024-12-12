@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #a0a0a0;
+}
+
+.header {
+    background-color: #666;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.divPage{
+    padding-left: 10px;
+}
+
+.logo img {
+    height: 60px;
+    margin-right: 20px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    margin-right: 20px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #ccc;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.nav ul li a:hover {
+    background-color: #bbb;
+}
