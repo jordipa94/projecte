@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    .login-container {
+      max-width: 400px;
+      margin: 50px auto;
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .login-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .login-header h2 {
+      margin: 0;
+      color: #333;
+    }
+    .login-form label {
+      display: block;
+      margin: 10px 0 5px;
+      color: #333;
+    }
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .login-form input[type="checkbox"] {
+      margin-right: 5px;
+    }
+    .login-form .w3-button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    .login-footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .login-footer a {
+      text-decoration: none;
+      color: #0066cc;
+    }
+    .login-footer a:hover {
+      text-decoration: underline;
+    }
+    
+  </style>
+</head>
+<body>
+
+<header class="w3-container w3-grey">
+  <div class="w3-center">
+    <a href="index.html"><img style="width: 80px; height: 80px;" src="/images/escut.png" alt="Logo"></a>
+    <h1>U.E.A Login</h1>
+  </div>
+</header>
+
+<div class="login-container w3-animate-opacity">
+  <div class="login-header">
+    <h2>Inicia Sessió</h2>
+  </div>
+  <form action="index.php" method="POST" class="login-form">
+    <label for="User_name">Nom d'usuari</label>
+    <input type="text" name="User_name" id="User_name" placeholder="Introdueix el teu usuari" required>
+    
+    <label for="User_password">Contrasenya</label>
+    <input type="password" name="User_password" id="User_password" placeholder="Introdueix la teva contrasenya" required>
+    
+    <label for="Remember">
+      <input type="checkbox" name="Remember" id="Remember" <?php echo isset($_COOKIE['txtLogin']) ? 'checked' : ''; ?>> Recorda'm
+    </label>
+    
+    <button href="/pages/Admin/admin.html" type="submit" name="btnSubmit" class="w3-button w3-green w3-hover-light-green">Entrar</button>
+    <button type="submit" name="btnRegistrarse" class="w3-button w3-blue w3-hover-light-blue">Registrarse</button>
+  </form>
+  <div class="login-footer">
+    <a href="#">Has oblidat la teva contrasenya?</a>
+  </div>
+</div>
+
+<footer class="w3-container w3-grey w3-center">
+  <p>© 2025 U.E.A. Tots els drets reservats.</p>
+</footer>
+
+</body>
+</html>
