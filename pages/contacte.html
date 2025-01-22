@@ -6,6 +6,19 @@
     <title>Contacte</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+<style>
+    .mapa {
+    background-color: green;
+    margin-right: 52%;
+    padding-top: 20%;
+    padding-right: 20%;
+    float: right;
+    }
+    .peumapa{
+    margin-right: 45.5%;
+    float: right;
+    }
+</style>
 <body>
 
 <header class="w3-container w3-grey">
@@ -29,6 +42,45 @@
     <a class="w3-button w3-black" href="contacte.html">Contacte</a>
     
 </header>
-    
+
+    <div class="w3-container mapa"></div>
+
+    <div class="w3-container peumapa">
+
+        <span>Ubicacio: Camí del Graó, 25110, 25110 Alpicat, Lleida</span>
+        <p>Telefon: 123 45 67 89</p>
+
+    </div>
+
+    <form style="padding-top: 20px;padding-left: 10px;">
+
+        <label for="nom">Nom:</label>
+        <input type="text" name="nom" id="nom" required>
+        
+        <br><br>
+
+        <label for="mail">Mail:</label>
+        <input type="text" name="mail" id="mail" required>
+        
+        <br><br>
+
+        <label for="concepte">Concepte:</label>
+        <input type="text" name="concepte" id="concepte" required>
+        
+        <br><br>
+
+        <label for="missatge">Missatge:</label>
+        <textarea name="missatge" id="missatge" required></textarea>
+        
+        <br><br>
+
+        <button type="enviar" name="enviar" class="btn btn-primary">Enviar</button>
+
+    </form>
+
+    <footer class="w3-container w3-grey" style="margin-top: 280px; padding-bottom: 5px;">
+        <p>© 2025 Equipo de Fútbol - Administración</p>
+    </footer>
+
 </body>
 </html>
