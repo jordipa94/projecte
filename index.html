@@ -5,117 +5,217 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Index</title>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    /* General styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #333;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .menu {
+      display: flex;
+      gap: 15px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .menu a:hover {
+      background-color: #555;
+    }
+
+    .menu .dropdown {
+      position: relative;
+    }
+
+    .menu .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      top: 40px;
+      left: 0;
+      min-width: 150px;
+      z-index: 1000;
+    }
+
+    .menu .dropdown-content a {
+      display: block;
+      padding: 10px;
+    }
+
+    .menu .dropdown-content a:hover {
+      background-color: #555;
+    }
+
+    .menu .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Responsive Menu */
+    .hamburger {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .menu-responsive {
+      display: none;
+      flex-direction: column;
+      background-color: #333;
+      width: 100%;
+    }
+
+    .menu-responsive a {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .menu-responsive .dropdown-content {
+      position: static;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .menu-responsive {
+        display: flex;
+      }
+    }
+
+    .welcomeDiv, .teamDiv {
+      text-align: center;
+      padding: 30px;
+      color: white;
+    }
+
+    .welcomeDiv {
+      background-color: green;
+    }
+
+    .teamDiv {
+      background-color: rgb(33, 124, 33);
+    }
+
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 15px;
+    }
+
+    footer .social {
+      display: inline-block;
+      margin-left: 10px;
+    }
+  </style>
 </head>
-<style>
-  .social{
-    float: right;
-    margin: 5px;
-  }
-  .welcomeDiv {
-    background-color: green;
-    text-align: center;
-    padding: 50px;
-  }
-  .moreNews{
-    text-align: center;
-    padding: 20px;
-  }
-  .welcomeDiv a {
-    text-decoration: none;
-  }
-  .teamDiv{
-    background-color: rgb(33, 124, 33);
-    text-align: center;
-    padding: 30px;
-  }
-</style>
 <body>
 
-<header class="w3-container w3-grey">
-
-  <a href="index.html"><img style="width: 80px;height: 80px;padding: 10px;" src="images/escut.png" alt=""></a>
-  
-  <a class="w3-button w3-black" href="pages/noticies.html">Noticies</a>
-  
-  <div class="w3-dropdown-hover">
-      <button class="w3-button w3-black">Sobre Nosaltres ↓</button>
-      <div class="w3-dropdown-content w3-bar-block w3-border">
-      <a href="pages/club.html" class="w3-bar-item w3-button">Club</a>
-      <a href="pages/historia.html" class="w3-bar-item w3-button">Historia</a>
+<header>
+  <a href="index.html">
+    <img style="width: 50px; height: 50px;" src="images/escut.png" alt="Logo">
+  </a>
+  <nav class="menu">
+    <a href="pages/noticies.html" >Notícies</a>
+    <div class="dropdown">
+      <a href="#">Sobre Nosaltres ↓</a>
+      <div class="dropdown-content">
+        <a href="pages/club.html">Club</a>
+        <a href="pages/historia.html">Història</a>
       </div>
-  </div>
-  
-  <a class="w3-button w3-black" href="https://www.fcf.cat/club/2324/alpicat-club-de-futbol-ue">Programes</a>
-  
-  <a class="w3-button w3-black" href="pages/galeria.html">Galeria</a>
-  
-  <a class="w3-button w3-black" href="pages/contacte.html">Contacte</a>
-
-  <a class="w3-button w3-black" href="pages/Admin/admin.html">Admin</a>
-
-  
+    </div>
+    <a href="https://www.fcf.cat/club/2324/alpicat-club-de-futbol-ue">Programes</a>
+    <a href="pages/galeria.html">Galeria</a>
+    <a href="pages/contacte.html">Contacte</a>
+    <a href="pages/Admin/admin.html">Admin</a>
+  </nav>
+  <span class="hamburger" onclick="toggleMenu()">☰</span>
+  <nav class="menu-responsive" id="menuResponsive">
+    <a href="pages/noticies.html">Notícies</a>
+    <a href="pages/club.html">Club</a>
+    <a href="pages/historia.html">Història</a>
+    <a href="https://www.fcf.cat/club/2324/alpicat-club-de-futbol-ue">Programes</a>
+    <a href="pages/galeria.html">Galeria</a>
+    <a href="pages/contacte.html">Contacte</a>
+    <a href="pages/Admin/admin.html">Admin</a>
+  </nav>
 </header>
 
-<div class="w3-container welcomeDiv">
-  <h2 class="w3-padding w3-text-black w3-round w3-center">"BENVINGUTS A U.E.A"</h2>
-  <p class="w3-padding w3-text-black w3-round w3-center">*foto nens jugant*</p>
-  <button class="w3-button w3-white w3-hover-green w3-round"><a href="./pages/log/login.html">INSCRIU-TE ARA</a></button>
+<div class="welcomeDiv">
+  <h2>"BENVINGUTS A U.E.A"</h2>
+  <p>*foto nens jugant*</p>
+  <a class="w3-button w3-white w3-hover-green w3-round" href="./pages/log/login.html">INSCRIU-TE ARA</a>
 </div>
 
-<div class="w3-container teamDiv">
-  <a href="pages/club.html"><h2 class="w3-padding w3-text-black w3-round w3-center">UNEIXTE AL NOSTRE EQUIP</h2></a>
-  <p class="w3-padding w3-text-black w3-round w3-center">ENTRENEM FUTURS CAMPIONS</p>
-  <p class="w3-padding w3-text-black w3-round w3-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    Iusto, nisi sit perferendis, sunt commodi eum et fugiat ipsa mollitia adipisci modi laudantium quam inventore 
-    quibusdam accusantium quas amet labore exercitationem.
-  </p>
+<div class="teamDiv">
+  <h2>UNEIX-TE AL NOSTRE EQUIP</h2>
+  <p>ENTRENEM FUTURS CAMPIONS</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, nisi sit perferendis, sunt commodi eum et fugiat ipsa mollitia adipisci modi laudantium quam inventore quibusdam accusantium quas amet labore exercitationem.</p>
 </div>
 
 <main class="w3-container" style="margin-top: 20px;">
   <h2 class="w3-center">Últimes Notícies</h2>
-
-  <div class="w3-row-padding" style="overflow: auto;">
-
-      <div class="w3-third w3-margin-bottom">
-          <div class="w3-card w3-padding w3-white">
-              <h3>Notícia 1</h3>
-              <img src="../images/escut.png" alt="">
-              <p>Detalls breus de la primera notícia. Pots afegir un text més llarg aquí.</p>
-              <a href="#" class="w3-button w3-blue">Llegir més</a>
-          </div>
+  <div class="w3-row-padding">
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card w3-padding">
+        <h3>Notícia 1</h3>
+        <img src="../images/escut.png" alt="">
+        <p>Detalls breus de la primera notícia.</p>
+        <a href="#" class="w3-button w3-blue">Llegir més</a>
       </div>
-
-      <div class="w3-third w3-margin-bottom">
-          <div class="w3-card w3-padding w3-white">
-              <h3>Notícia 2</h3>
-              <img src="../images/escut.png" alt="">
-              <p>Detalls breus de la segona notícia. Pots afegir un text més llarg aquí.</p>
-              <a href="#" class="w3-button w3-blue">Llegir més</a>
-          </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card w3-padding">
+        <h3>Notícia 2</h3>
+        <img src="../images/escut.png" alt="">
+        <p>Detalls breus de la segona notícia.</p>
+        <a href="#" class="w3-button w3-blue">Llegir més</a>
       </div>
-
-      
-      <div class="w3-third w3-margin-bottom">
-          <div class="w3-card w3-padding w3-white">
-              <h3>Notícia 3</h3>
-              <img src="../images/escut.png" alt="">
-              <p>Detalls breus de la tercera notícia. Pots afegir un text més llarg aquí.</p>
-              <a href="#" class="w3-button w3-blue">Llegir més</a>
-          </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card w3-padding">
+        <h3>Notícia 3</h3>
+        <img src="../images/escut.png" alt="">
+        <p>Detalls breus de la tercera notícia.</p>
+        <a href="#" class="w3-button w3-blue">Llegir més</a>
       </div>
+    </div>
   </div>
-
   <div class="w3-container moreNews">
-    <button class="w3-button w3-button w3-blue w3-round"><a href="pages/noticies.html">MES NOTICIES</a></button>
+    <a href="pages/noticies.html" class="w3-button w3-blue w3-round">MÉS NOTÍCIES</a>
   </div>
-
 </main>
 
-<footer class="w3-light-grey w3-center w3-padding-16 w3-border-top" style="position:relative; bottom:0; width:100%;">
-  <span style="padding-left: 5%;">© 2025 Equipo de Fútbol - Administración</span>
+<footer>
+  <span>© 2025 Equipo de Fútbol - Administración</span>
   <img class="social" width="30px" src="images/x.svg" alt="">
   <img class="social" width="30px" src="images/instagram.jpeg" alt="">
 </footer>
-  
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("menuResponsive");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
+</script>
+
 </body>
 </html>
