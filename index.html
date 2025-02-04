@@ -211,10 +211,26 @@
 </footer>
 
 <script>
+  
+/*
   function toggleMenu() {
-    const menu = document.getElementById("menuResponsive");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  const menu = document.getElementById("menuResponsive");
+  if (window.getComputedStyle(menu).display === "none") {
+    menu.style.display = "flex";
+  } else {
+    menu.style.display = "none";
   }
+}*/
+function toggleMenu() {
+  const menu = document.getElementById("menuResponsive");
+  if (menu.style.display === "none" || menu.style.display === "") {
+    menu.style.display = "flex"; // Show menu
+  } else {
+    menu.style.display = "none"; // Hide menu
+  }
+}
+
+
 </script>
 
 </body>
